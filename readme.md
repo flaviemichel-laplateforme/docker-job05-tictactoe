@@ -14,21 +14,21 @@ J'ai ensuite construit l'image :
 docker build -t jeu-morpion .
 \`\`\`
 
-![Dockerfile](images\Dockerfile.png)
+![Dockerfile](images/Dockerfile.png)
 
 ## Construction de l'image
 
 ### Erreur lors du build (oublie de sauvegarder le Dockerfile)
 
-![Erreur build](images\docker-build-t-erreur.png)
+![Erreur build](images/docker-build-t-erreur.png)
 
 ### Docker build réussi
 
-![build réussi](images\docker-build-reussi.png)
+![build réussi](images/docker-build-reussi.png)
 
 ### Docker desktop images jeu-morpion
 
-![Docker desktop images](images\Docker-desktop-jeu-morpion-images.png)
+![Docker desktop images](images/Docker-desktop-jeu-morpion-images.png)
 
 ## Création et vérification du volume
 
@@ -38,34 +38,34 @@ docker volume create game-results
 docker volume ls
 \`\`\`
 
-![docker volume create game-results et docker volume ls](images\creation-volume-et-liste.png)
+![docker volume create game-results et docker volume ls](images/creation-volume-et-liste.png)
 
 ### Docker desktop - Volumes game-results
 
-![Docker desktop - volumes](images\Docker-desktop-volumes.png)
+![Docker desktop - volumes](images/Docker-desktop-volumes.png)
 
 ## Lancement du conteneur en liant le volume
 
 ### C'est ici que j'assemble tout : je lance le conteneur (jeu-morpion) sur le port 8080, et on lie notre volume (game-results) au dossier du serveur web (/var/www/html).
 
-![docker run](images\docker-run-id-conteneur.png)
+![docker run](images/docker-run-id-conteneur.png)
 
 ### Conteneur app-morpion sur Docker desktop
 
-![app-morpion](images\Docker-desktop-conteneur-app-morpion.png)
+![app-morpion](images/Docker-desktop-conteneur-app-morpion.png)
 
 ## Ouverture du jeu du morpio Tic Tac Toe sur http://localhost:8080
 
-![jeu morpion](images\tic-tac-toe-8080.png)
+![jeu morpion](images/tic-tac-toe-8080.png)
 
 ## Le terminal qui affiche le tableau JSON avec les résultats des parties.
 
-![results.json](images\terminal-commande-pour-afficher-results.json.png)
+![results.json](images/terminal-commande-pour-afficher-results.json.png)
 
 ## Stopper le conteneur proprement
 
-![docker stop app-morpion](images\docker-stop-app-morpion.png)
+![docker stop app-morpion](images/docker-stop-app-morpion.png)
 
 ### Arrêt de app-morpion dans Docker desktop ( On voit bien que le bouton n'est plus vert )
 
-![docker stop app-morpion - desktop](images\Docker-desktop-stop-app-morpion.png)
+![docker stop app-morpion - desktop](images/Docker-desktop-stop-app-morpion.png)
