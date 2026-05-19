@@ -1,6 +1,18 @@
-# PROJET TIC TAC TOE : jeu du morpion
+# PROJET TIC TAC TOE : jeu du morpion - Tic Tac toe - job 05 - Persistance avec les Volumes Docker
 
-## Création d'un Dockerfile
+## 🎯 Objectif
+
+Héberger un jeu de morpion (Tic Tac Toe) sur un serveur web conteneurisé et utiliser un **Volume Docker** pour rendre l'historique des parties persistant.
+
+---
+
+## Création d'un Dockerfile ( Construction de l'image optimisée )
+
+J'ai rédigé un `Dockerfile` basé sur `php:8.2-apache` en utilisant la commande `COPY --chown` pour optimiser les calques et donner les droits d'écriture en une seule passe.
+J'ai ensuite construit l'image :
+\`\`\`bash
+docker build -t jeu-morpion .
+\`\`\`
 
 ![Dockerfile](images\Dockerfile.png)
 
@@ -18,9 +30,13 @@
 
 ![Docker desktop images](images\Docker-desktop-jeu-morpion-images.png)
 
-## Création du volume
+## Création et vérification du volume
 
-### Je crée un espace de stockage physique géré par Docker qui survivra à la suppression du conteneur et je vérifie que le volume existe bien .
+J'ai créé le volume persistant `game-results` chargé de stocker le fichier JSON :
+\`\`\`bash
+docker volume create game-results
+docker volume ls
+\`\`\`
 
 ![docker volume create game-results et docker volume ls](images\creation-volume-et-liste.png)
 
@@ -41,3 +57,15 @@
 ## Ouverture du jeu du morpio Tic Tac Toe sur http://localhost:8080
 
 ![jeu morpion](images\tic-tac-toe-8080.png)
+
+## Le terminal qui affiche le tableau JSON avec les résultats des parties.
+
+![results.json](images\terminal-commande-pour-afficher-results.json.png)
+
+## Stopper le conteneur proprement
+
+![docker stop app-morpion](images\docker-stop-app-morpion.png)
+
+### Arrêt de app-morpion dans Docker desktop ( On voit bien que le bouton n'est plus vert )
+
+![docker stop app-morpion - desktop](images\Docker-desktop-stop-app-morpion.png)
