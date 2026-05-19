@@ -33,3 +33,11 @@
 ### C'est ici que j'assemble tout : je lance le conteneur (jeu-morpion) sur le port 8080, et on lie notre volume (game-results) au dossier du serveur web (/var/www/html).
 
 ![docker run](images\docker-run-id-conteneur.png)
+
+### Conteneur app-morpion sur Docker desktop
+
+![app-morpion](images\Docker-desktop-conteneur-app-morpion.png)
+
+## Ouverture du jeu du morpio Tic Tac Toe sur http://localhost:8080
+
+![jeu morpion](images\tic-tac-toe-8080.png)
